@@ -9,6 +9,6 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P> <a href="list.do"> The time on the server is ${serverTime}. 입장 </a></P>
 </body>
 </html>

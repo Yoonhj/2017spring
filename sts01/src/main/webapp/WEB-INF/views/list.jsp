@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,21 +12,22 @@
 	
 	<table>
 		<tr>
-			<th>»ç¹ø</th>			
-			<th>ÀÌ¸§</th>			
-			<th>³¯Â¥</th>
-			<th>±İ¾×</th>
+			<th>ì‚¬ë²ˆ</th>			
+			<th>ì´ë¦„</th>			
+			<th>ë‚ ì§œ</th>
+			<th>ê¸ˆì•¡</th>
 		</tr>
-		<!-- ½ºÆ®·µÃ÷ jstlÀ» ¸¸µé¾î³ÂµíÀÌ ½ºÇÁ¸µ jstlÀÌ ÀÖ´Âµ¥ ¹ü¿ë¼º¶«¿¡ ÀÏ¹İ jstl¾´´Ù°í
-		±Ùµ¥ ½ºÆ®·µÃ÷¿¡¼­ ±×·±°É ½è´Ù°í....? -->
+		<!-- ìŠ¤íŠ¸ëŸ¿ì¸  jstlì„ ë§Œë“¤ì–´ëƒˆë“¯ì´ ìŠ¤í”„ë§ jstlì´ ìˆëŠ”ë° ë²”ìš©ì„±ë•œì— ì¼ë°˜ jstlì“´ë‹¤ê³ 
+		ê·¼ë° ìŠ¤íŠ¸ëŸ¿ì¸ ì—ì„œ ê·¸ëŸ°ê±¸ ì¼ë‹¤ê³ ....? -->
 		<c:forEach items="${list}" var="bean">
 		<tr>
-			<td><a href="">${bean.sabun }</a></td>
-			<td><a href="">${bean.name}</a></td>
-			<td><a href="">${bean.nalzza}</a></td>
-			<td><a href="">${bean.pay}</a></td>
+			<td><a href="detail.do?idx=${bean.sabun }">${bean.sabun }</a></td>
+			<td><a href="detail.do?idx=${bean.sabun }">${bean.name}</a></td>
+			<td><a href="detail.do?idx=${bean.sabun }">${bean.nalzza}</a></td>
+			<td><a href="detail.do?idx=${bean.sabun }">${bean.pay}</a></td>
 		</tr>
 		</c:forEach>
 	</table>
+	<a href="add.do">ì…ë ¥ í˜ì´ì§€ë¡œ</a>
 </body>
 </html>
