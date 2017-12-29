@@ -20,7 +20,7 @@ public class GuestDaoImplTest {
 		guestDao = (GuestDao)ac.getBean("guestDao");
 	}
 
-	@Test
+//	@Test
 	public void testSelectAll() throws Exception {
 	//		fail("Not yet implemented");
 		List<GuestVo> list = guestDao.selectAll();
@@ -35,4 +35,14 @@ public class GuestDaoImplTest {
 
 	}
 
+	
+	
+	
+	@Test
+	public void testNextVal() throws Exception {
+		int nxv = guestDao.nextVal();
+		System.out.println(nxv);
+		assertTrue(nxv>0);
+	}
+	
 }

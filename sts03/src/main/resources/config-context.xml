@@ -17,11 +17,17 @@
 		</bean>
 		
 		
-		
-
+	
 	<!-- daoimple에서 jdbcddaosupport를 익스텐드 하면 자동으로 주입해줘서 jdbcTemplate에러 사라짐 -->
 		<bean id= "guestDao" class="com.hb.ex03.model.GuestDaoImpl">
 			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		
+		
+		<bean id="guestService" class="com.hb.ex03.service.GuestServiceImpl">
+			<!--  <property name="guestDao" ref="guestDao"></property> 
+			이렇게 하면 디폴트생성자가 없을때에는 객체 생성부터 오류 생겨버림-->
+			 <constructor-arg name="guestDao" ref="guestDao"></constructor-arg>
 		</bean>
 		
 </beans>
