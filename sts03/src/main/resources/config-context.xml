@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+			<!-- 오늘은 spring jdbc에서 제공하는 심플 드라이버 데이터 소스 사용... -->
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+			<property name="driverClass" value="org.gjt.mm.mysql.Driver"></property>
+			<property name="url" value="jdbc:mysql://localhost:3306/xe"></property>
+			<property name="username" value="scott"></property>
+			<property name="password" value="tiger"></property>
+		</bean>
+		
+		<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref="dataSource"></property>
+		</bean>
+		
+		
+		
+
+	<!-- daoimple에서 jdbcddaosupport를 익스텐드 하면 자동으로 주입해줘서 jdbcTemplate에러 사라짐 -->
+		<bean id= "guestDao" class="com.hb.ex03.model.GuestDaoImpl">
+			<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		</bean>
+		
+</beans>

@@ -40,7 +40,7 @@ public class GuestDaoImpl implements GuestDao {
 
 	@Override
 	public void insertOne(GuestVo bean) throws Exception {
-		String sql ="INSERT INTO GUEST03 VALUES (?,?,NOW(), ?)";
+		String sql ="INSERT INTO GUEST03 VALUES (?, ?, NOW(), ?)";
 		
 		//Object[] objs = new Object[]{bean.getSabun(), bean.getName(), bean.getPay()};
 		jdbcTemplate.update(sql, bean.getSabun(), bean.getName(), bean.getPay()); //물음표 순서대로
